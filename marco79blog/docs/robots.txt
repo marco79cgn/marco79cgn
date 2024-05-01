@@ -1,3 +1,0 @@
-User-agent: *
-Disallow:
-Sitemap: https://marco79cgn.github.io/sitemap.xml
