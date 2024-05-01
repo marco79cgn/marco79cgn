@@ -16,7 +16,7 @@ buildExpired: false
 
 #googleAnalytics: UA-123-45
 
-paginate: 15 # articles per page
+paginate: 5 # articles per page
 
 minify:
   disableXML: true
@@ -37,19 +37,19 @@ languages:
     params:
       profileMode:
         enabled: true
-        title: Marco Dengel
-        subtitle: "Welcome to my site!"
+        title: "Hello, I'm Marco."
+        subtitle: "Just a normal IT guy. Get in touch:"
         imageUrl: "selfie.jpg"
         imageTitle: Selfie
         imageWidth: 150
         imageHeight: 150
-        buttons:
-          - name: About
-            url: about
-          - name: Project
-            url: projects
-          - name: Resume
-            url: resume.pdf
+#        buttons:
+#          - name: About
+#            url: about
+#          - name: Project
+#            url: projects
+#          - name: Resume
+#            url: resume.pdf
 
     menu:
       main:
@@ -57,22 +57,10 @@ languages:
           name: About
           url: about
           weight: 1
-        - identifier: Projects
-          name: Project
-          url: projects
-          weight: 2
-        - identifier: Resume
-          name: Resume
-          url: resume.pdf
-          weight: 3
         - identifier: Blog
-          name: Blogs
-          url: blog
-          weight: 4
-        - identifier: Search
-          name: Search
-          url: search
-          weight: 5
+          name: Blog
+          url: posts
+          weight: 2
 
 outputs:
   home:
