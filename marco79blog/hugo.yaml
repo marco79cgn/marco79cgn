@@ -2,6 +2,7 @@ baseURL: https://marco79cgn.github.io/
 languageCode: de-DE
 title: marco79 blog
 theme: ["PaperMod"]
+publishDir: docs
 
 enableInlineShortcodes: true
 enableEmoji: true # allowing using emoji
