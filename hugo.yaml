@@ -1,0 +1,151 @@
+baseURL: https://marco79cgn.github.io/
+languageCode: de-DE
+title: marco79 blog
+theme: ["PaperMod"]
+publishDir: docs
+
+enableInlineShortcodes: true
+enableEmoji: true # allowing using emoji
+enableRobotsTXT: true
+
+hasCJKLanguage: true
+
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+#googleAnalytics: UA-123-45
+
+paginate: 15 # articles per page
+
+minify:
+  disableXML: true
+  # minifyOutput: true
+
+permalinks:
+  post: "/:title/"
+  # post: "/:year/:month/:day/:title/"
+
+defaultContentLanguage: en # prefer language
+defaultContentLanguageInSubdir: false
+
+languages:
+  en:
+    languageName: "English 🇨🇦"
+    contentDir: content
+    weight: 1
+    params:
+      profileMode:
+        enabled: true
+        title: Marco Dengel
+        subtitle: "Welcome to my site!"
+        imageUrl: "selfie.jpg"
+        imageTitle: Selfie
+        imageWidth: 150
+        imageHeight: 150
+        buttons:
+          - name: About
+            url: about
+          - name: Project
+            url: projects
+          - name: Resume
+            url: resume.pdf
+
+    menu:
+      main:
+        - identifier: About
+          name: About
+          url: about
+          weight: 1
+        - identifier: Projects
+          name: Project
+          url: projects
+          weight: 2
+        - identifier: Resume
+          name: Resume
+          url: resume.pdf
+          weight: 3
+        - identifier: Blog
+          name: Blogs
+          url: blog
+          weight: 4
+        - identifier: Search
+          name: Search
+          url: search
+          weight: 5
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: Marco
+  author: Marco
+
+  defaultTheme: dark # defaultTheme: light or dark
+  disableThemeToggle: false
+  DateFormat: "2006-01-02"
+  ShowShareButtons: true
+  ShowReadingTime: true
+  # disableSpecialistPost: true
+  disableScrollToTop: false
+  displayFullLangName: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  hideFooter: false # hide foot
+  ShowWordCounts: true
+  VisitCount: true
+
+  ShowLastMod: true
+
+  ShowToc: true
+  TocOpen: true
+
+  comments: true
+
+  socialIcons:
+    - name: x
+      url: "https://x.com/marco79"
+    - name: bluesky
+      url: "https://bsky.app/profile/marco79.bsky.social"
+    - name: github
+      url: "https://github.com/marco79cgn"
+    - name: mastodon
+      url: "https://mastodon.social/@marco79cgn"
+    - name: instagram
+      url: "https://www.instagram.com/marco79/"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/marco-dengel-a5261a83/"
+    - name: email
+      url: "mailto:marco79cgn@gmail.com"
+
+  assets:
+    favicon: "k-48.png"
+    favicon16x16: "k-48.png"
+    favicon32x32: "k-48.png"
+    apple_touch_icon: "k-48.png"
+    safari_pinned_tab: "k-48.png"
+
+  label:
+    text: "marco79 blog"
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 1
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary"]
+
+  twikoo:
+    version: 1.4.11
+
+taxonomies:
+  category: categories
+  tag: tags
+  series: series
