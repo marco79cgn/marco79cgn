@@ -1,7 +1,7 @@
 baseURL: https://marco79cgn.github.io/
 languageCode: de-DE
 title: marco79 blog
-theme: ["PaperMod"]
+theme: ["hugo-shortcode-roneo-collection", "PaperMod"]
 publishDir: docs
 
 enableInlineShortcodes: true
@@ -90,8 +90,8 @@ params:
 
   ShowLastMod: true
 
-  ShowToc: true
-  TocOpen: true
+  ShowToc: false
+  TocOpen: false
 
   comments: true
 

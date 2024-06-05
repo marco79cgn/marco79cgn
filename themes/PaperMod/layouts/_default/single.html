@@ -62,4 +62,43 @@
   {{- end }}
 </article>
 
+
+{{/*  Load plyr.io  */}}
+
+{{ if or ( .HasShortcode "audio" ) ( .HasShortcode "video" )  ( .HasShortcode "archive-audio" ) }}
+
+<link rel="stylesheet" href="/css/plyr.css">
+
+<script src="/js/plyr.polyfilled.js" crossorigin="anonymous"></script>
+<script src="/js/hls.js" crossorigin="anonymous"></script>
+<script>
+  (function() {
+    const players = Array.from(document.querySelectorAll('.player')).map(
+            p => new Plyr(p, {
+              controls: ['play', 'rewind', 'fast-forward', 'progress', 'current-time', 'duration', 'mute', 'volume', 'airplay'],
+    {{/*  autoplay: true,  */}}
+    {{/*  settings: ['speed']  */}}
+  })
+  );
+
+    players.forEach(function(p){
+      var hls = new Hls();
+      hls.loadSource(p.media.currentSrc);
+      hls.attachMedia(p.media);
+    });
+
+    {{/*  Stop other players when starting  */}}
+    players.forEach(function(p){
+      p.on('play', event => {
+        const instance = event.detail.plyr;
+        console.log('Stop others players');
+        players.forEach(function(p){ if(p != instance) p.stop()});
+      })
+    });
+  })();
+</script>
+
+{{ end }}
+
+
 {{- end }}{{/* end main */}}
